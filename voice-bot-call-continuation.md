@@ -26,6 +26,7 @@ For high-volume voice bots handling service requests, complaints, or transaction
 
 ### Core concept
 When a returning caller is detected, instead of the standard welcome flow, the bot offers them a choice: *resume where you left off* or *start a new conversation.* The user stays in control — nothing is assumed.
+While configuring this, a lookback value is added defining how far back the system should search for a previous conversation. If the user's last call falls outside this window, the system treats them as a new caller and plays the standard welcome message. Lookback value: 15mins, 20mins, 30mins
 
 ### What I chose not to do
 An earlier consideration was to *automatically* resume the previous conversation without asking. I rejected this because:
@@ -38,7 +39,6 @@ The feature is not enabled by default. Bot operators must explicitly turn it on 
 1. **Not all bots benefit from it** — a simple FAQ bot with 30-second interactions doesn't need call continuation; a complex service request bot does
 2. **Operators need to configure the "resume" intent** — the feature requires a mapped intent for the restored conversation state, which takes setup effort
 3. **It prevents unintended behaviour** in bots where operators haven't thought through the resumed flow
-4. While configuring this, a lookback value is added defining how far back the system should search for a previous conversation. If the user's last call falls outside this window, the system treats them as a new caller and plays the standard welcome message. Lookback value: 15mins, 20mins, 30mins
 
 ### Conversation flow
 
