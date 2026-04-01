@@ -6,7 +6,7 @@
 
 ## Background
 
-This case study describes a feature built on a B2B subscription management platform used by an OTT (Over-The-Top) content provider. The OTT had partnered with 10+ content vendors — each providing distinct services bundled into subscription plans sold to end users.
+This case study describes a feature built on a B2B subscription management platform used by an OTT (Over-The-Top) content provider. The OTT had partnered with 10+ content vendors, each providing distinct services bundled into subscription plans sold to end users.
 
 The commercial agreement between the OTT and its vendors was usage-based: **a vendor would only be paid if a subscriber actually accessed their content**, not simply because the user had purchased a plan containing it.
 
@@ -16,7 +16,7 @@ This created a product problem. The subscription platform had a **plan-to-featur
 
 ## Problem Discovery
 
-The requirement surfaced during onboarding of this OTT client. It was a condition of their vendor contracts: payout had to be tied to consumption, not entitlement. There was **no prior process** — this was net new. The OTT had never needed this before, and the platform had never built for it.
+The requirement surfaced during onboarding of this OTT client. It was a condition of their vendor contracts: payout had to be tied to consumption, not entitlement. There was **no prior process**, this was net new. The requirement was new, and the platform had never built for it.
 
 The ask was clear: build a mechanism to track feature access at the subscription level and generate a monthly vendor payout report that the OTT's revenue and commercial teams could use for vendor reconciliation.
 
@@ -42,7 +42,7 @@ An early design question was whether our platform should pull access data from t
 
 **Decision: Push (OTT sends logs to us in real time)**
 
-The OTT's systems are the source of truth for feature access — they know the moment a user opens a piece of content. We have no visibility into user behaviour on their platform. Building a pull mechanism would have required the OTT to expose a queryable access log API on their end, introducing unnecessary complexity and latency. A push model was simpler, more real-time, and placed the data responsibility where it naturally lived.
+The OTT's systems are the source of truth for feature access, they know the moment a user opens a piece of content. We have no visibility into user behaviour on their platform. Building a pull mechanism would have required the OTT to expose a queryable access log API on their end, introducing unnecessary complexity and latency. A push model was simpler, more real-time, and placed the data responsibility where it naturally lived.
 
 ---
 
@@ -120,4 +120,4 @@ The zero-dispute track record since launch suggests the model — simple, binary
 
 ---
 
-*This case study is based on real product work. Data, client names, and vendor details have been omitted or anonymised.*
+*This case study is based on real product work. Data, client names, and vendor details have been omitted*
